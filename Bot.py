@@ -4,7 +4,7 @@ from discord.ext import commands
 import json
 import random
 
-def pic_rd(length):         #隨機生成五個字
+def pic_rd(length):         #隨機生成一個字串
     prd = str()
     characters = "qwertyuiopasdfghjklzxcvbnm" + "1234567890"
     for i in range(length):
