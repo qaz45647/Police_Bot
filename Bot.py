@@ -23,13 +23,19 @@ async def on_ready():
     print(">> Bot is online <<")
 
 
-@bot.command()            #機器人Ping
+@bot.command()          #機器人Ping
 async def ping(ctx):
     await ctx.send(f"{round(bot.latency*1000)} ms")
+
 
 @bot.command()          #隨機生成一張支語警察圖片
 async def Police_IMG(ctx):    
     await ctx.send(jdata['pic']+pic_rd(5)+'.jpg')
+
+
+
+
+
 
 
 bot.run(jdata['Bot_TOKEN'])
