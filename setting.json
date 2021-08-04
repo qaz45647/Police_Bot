@@ -1,5 +1,5 @@
 {
-    "Bot_TOKEN":"ODY3MDM4MTczMzg5NzgzMDcx.YPbSOQ.2QQvRhpORiAG5bSJNzKIAyNnUDA",
+    "bot_TOKEN":"ODY3MDM4MTczMzg5NzgzMDcx.YPbSOQ.2QQvRhpORiAG5bSJNzKIAyNnUDA",
     "pic":"https://ect.incognitas.net/szh_police/szh_police_",
     "cn_term":[
         "接地氣",
@@ -50,5 +50,6 @@
         "Youtube",
         "軟體",
         "網際網路",
-        "太強啦"]
+        "太強啦"],
+    "violation_list":[]
 }
