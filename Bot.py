@@ -2,8 +2,12 @@ from inspect import EndOfBlock
 import discord
 from discord import file
 from discord import message
+from discord import guild
+from discord import member
+from discord import user
+from discord import channel
 from discord.ext import commands
-import json
+import json,asyncio
 import random
 
 
@@ -38,32 +42,44 @@ async def 呼叫支語警察(ctx):
 
 @bot.event      
 async def on_message(msg):
-    if msg.author != bot.user:      #檢查訊息中是否有支語,有則列印出支語與其對應文字,並判定違規
+    if msg.author != bot.user:      
+        channel = bot.get_channel(867417685994242099)
+
         msg_author=msg.author.name
-        violation = False   
-        term_index = -1    
-        for term in jdata['cn_term']:
+        violation = False
+        term_index = -1
+
+        for term in jdata['cn_term']:       #檢查訊息中是否有支語,有則列印出支語與其對應文字,並判定違規
             term_index += 1            
-            if term in msg.content:          
+            if term in msg.content:
                 await msg.channel.send(term +'❌→ ' + jdata['tw_term'][term_index]+'⭕')
                 violation=True
 
         if violation == True:       #如果違規,會在機器人提醒後,張貼隨機支語警察圖片,並將使用者列入違規名單中
             await msg.channel.send(jdata['pic']+pic_rd(5)+'.jpg')
-            jdata['violation_list'].append(msg_author)
-            
+            jdata['violation_list'].append(msg_author)            
+      
 
-        violations_nb = set(jdata['violation_list'])        #如果在違規名單中出現三次
-        for item in violations_nb:
+        for item in (jdata['violation_list']) :      #如果在違規名單中出現三次,清除清單紀錄,並增加"囚犯"身分
             if jdata['violation_list'].count(item) >=3:
-                print(item + '違規三次了')
-            
+                for a in range(3):
+                    jdata['violation_list'].remove(item)
 
-            
-            
+                guild = msg.guild
+                prisoner = guild.get_role(867416055366287361)
+                member = msg.author
+                await member.add_roles(prisoner)
+                await channel.send(item + "因違規被關入監獄5秒")                
+
+                async def interval():       #5秒後清除"囚犯"身分  604800
+                    A_Car = True
+                    if A_Car == True:
+                        await asyncio.sleep(180)
+                        await member.remove_roles(prisoner)
+                        await channel.send(item +"已從監獄中解放")
+                        A_Car = False
+                bg_task = bot.loop.create_task(interval())
+
     await bot.process_commands(msg)
             
-
-
-
 bot.run(jdata['bot_TOKEN'])
