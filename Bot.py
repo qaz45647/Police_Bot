@@ -31,19 +31,39 @@ async def on_ready():
     print(">> Bot is online <<")
 
 
+#增減清單
+#列出清單
+
+
+
+violations_nb = 3       #違規次數
+channel_id = 867417685994242099     #公告頻道id
+prisoner_id = 867416055366287361        #"囚犯"身分組id
+
+
+
 @bot.command()          #機器人Ping
 async def ping(ctx):
     await ctx.send(f"{round(bot.latency*1000)} ms")
 
+@bot.command()          #列出警告次數
+async def 違規次數(ctx):    
+    member = ctx.author.name
+    nb = jdata['violation_list'].count(member)
+    await ctx.send("你的違規次數為"f"{nb}""次,剩"f"{violations_nb-nb}""次扣打")
 
 @bot.command()          #隨機生成一張支語警察圖片
 async def 呼叫支語警察(ctx):    
     await ctx.send(jdata['pic']+pic_rd(5)+'.jpg')
 
+@bot.command()          #召喚支語大隊長
+async def 呼叫支語大隊長(ctx):    
+    await ctx.send("https://upload.cc/i1/2021/08/08/YcCeSR.gif")
+
 @bot.event      
 async def on_message(msg):
     if msg.author != bot.user:      
-        channel = bot.get_channel(867417685994242099)
+        channel = bot.get_channel(channel_id)
 
         msg_author=msg.author.name
         violation = False
@@ -57,24 +77,23 @@ async def on_message(msg):
 
         if violation == True:       #如果違規,會在機器人提醒後,張貼隨機支語警察圖片,並將使用者列入違規名單中
             await msg.channel.send(jdata['pic']+pic_rd(5)+'.jpg')
-            jdata['violation_list'].append(msg_author)            
-      
+            jdata['violation_list'].append(msg_author)      
 
         for item in (jdata['violation_list']) :      #如果在違規名單中出現三次,清除清單紀錄,並增加"囚犯"身分
-            if jdata['violation_list'].count(item) >=3:
-                for a in range(3):
+            if jdata['violation_list'].count(item) >=violations_nb:
+                for a in range(violations_nb):
                     jdata['violation_list'].remove(item)
 
                 guild = msg.guild
-                prisoner = guild.get_role(867416055366287361)
+                prisoner = guild.get_role(prisoner_id)
                 member = msg.author
                 await member.add_roles(prisoner)
                 await channel.send(item + "因違規被關入監獄5秒")                
 
-                async def interval():       #5秒後清除"囚犯"身分  604800
+                async def interval():       #5秒後清除"囚犯"身分  604800  #bug 刪除身分組 還是會執行                           
                     A_Car = True
                     if A_Car == True:
-                        await asyncio.sleep(180)
+                        await asyncio.sleep(10)
                         await member.remove_roles(prisoner)
                         await channel.send(item +"已從監獄中解放")
                         A_Car = False
