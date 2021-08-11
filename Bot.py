@@ -47,37 +47,36 @@ async def ping(ctx):
     await ctx.send(f"{round(bot.latency*1000)} ms")
 
 @bot.command()      #[修改公告頻道 867417685994242099
-async def 修改公告頻道(ctx,msg):
+async def 公告頻道(ctx,msg):
     global channel_id
     channel_id = int(msg)
     await ctx.send("修改完成")
 
 @bot.command()      #[修改囚犯身分組 867416055366287361
-async def 修改囚犯身分組(ctx,msg):
+async def 囚犯身分組(ctx,msg):
     global prisoner_id
     prisoner_id = int(msg)
     await ctx.send("修改完成")
 
 @bot.command()      #修改違規行為的扣打
-async def 修改違規次數(ctx,msg):
+async def 違規次數(ctx,msg):
     global violations_nb
     violations_nb = int(msg)
     await ctx.send(f"修改完成,違規次數為{violations_nb}次")
 
-@bot.command()      #
-async def 列出支語清單(ctx):
+@bot.command()      #列出支語清單 print('{:^10}'.format('test'))
+async def 支語清單(ctx):
     x=0
     y=0
-    c=1
     result=''
     list = jdata['tw_term']
     for item in jdata['cn_term']:
+        space = 5-len(jdata['cn_term'][y])
         list.insert(x,jdata['cn_term'][y])
-        result =result+ list[y]+'　　　　'+list[c]+'\n'
+        result =result+list[x]+space * '　'+list[x+1]+'\n'
         x+=2
         y+=1
-        c+=1
-    await ctx.send(f"支語　　　　正確用法\n{result}")
+    await ctx.send(f"支語　　　正確用法\n{result}")
 
 @bot.command()      #新增支語到清單中
 async def 新增支語(ctx,msg1,msg2):
@@ -85,7 +84,7 @@ async def 新增支語(ctx,msg1,msg2):
     jdata['tw_term'].append(msg2)
     await ctx.send(f"{jdata['cn_term']}\n{jdata['tw_term']}")
 
-@bot.command()      #移除支語到清單中
+@bot.command()      #移除清單中的支語
 async def 移除支語(ctx,msg1,msg2):
     jdata['cn_term'].remove(msg1)
     jdata['tw_term'].remove(msg2)
@@ -93,7 +92,7 @@ async def 移除支語(ctx,msg1,msg2):
     await ctx.send(jdata['tw_term'])
 
 @bot.command()          #列出警告次數
-async def 違規次數(ctx):    
+async def 我的違規次數(ctx):    
     member = ctx.author.name
     nb = jdata['violation_list'].count(member)
     await ctx.send(f"你的違規次數為{nb}次,剩{violations_nb-nb}次扣打")
