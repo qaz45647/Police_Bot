@@ -11,14 +11,6 @@ import json,asyncio
 import random
 
 
-def pic_rd(length):         #隨機生成一個字串
-    prd = str()
-    characters = "qwertyuiopasdfghjklzxcvbnm" + "1234567890"
-    for i in range(length):
-        prd = prd +  random.choice(characters)
-    return prd
-
-
 with open('setting.json','r',encoding='utf8') as jfile:
     jdata = json.load(jfile)
 
@@ -26,21 +18,21 @@ intents = discord.Intents.all()
 
 bot = commands.Bot(command_prefix='[')
 
-@bot.event
-async def on_ready():
-    print(">> Bot is online <<")
-
-
-#增減清單
-#列出清單
-
-
 
 violations_nb = 3       #違規次數
 channel_id = 867417685994242099     #公告頻道id
 prisoner_id = 867416055366287361        #"囚犯"身分組id
 sleep = 10      #入獄時間(s)
 
+
+
+@bot.event
+async def on_ready():
+    print(">> Bot is online <<")
+
+@bot.command()          
+async def test(ctx):
+    await ctx.send(ctx.author.roles)
 
 @bot.command()          #機器人Ping
 async def ping(ctx):
@@ -112,9 +104,8 @@ async def 呼叫支語大隊長(ctx):
 
 @bot.event      
 async def on_message(msg):
-    if msg.author != bot.user:      
+    if msg.author != bot.user and msg.content[0] != '[':
         channel = bot.get_channel(channel_id)
-
         msg_author=msg.author.name
         violation = False
         term_index = -1
@@ -139,17 +130,17 @@ async def on_message(msg):
                 prisoner = guild.get_role(prisoner_id)
                 member = msg.author
                 await member.add_roles(prisoner)
-                await channel.send(f"{item} + 因違規被關入監獄{sleep}秒")                
+                await channel.send(f"{item} + 因違規被關入監獄{sleep}秒")  
 
-                async def interval():       #10秒後清除"囚犯"身分  604800  #bug 刪除身分組 還是會執行                           
+                async def interval():       #10秒後清除"囚犯"身分   #bug 刪除身分組 還是會執行                           
                     A_Car = True
                     if A_Car == True:
                         await asyncio.sleep(sleep)
-                        await member.remove_roles(prisoner)
+                        await member.remove_roles(prisoner)       
                         await channel.send(item +"已從監獄中解放")
                         A_Car = False
                 bg_task = bot.loop.create_task(interval())
 
     await bot.process_commands(msg)
-            
+
 bot.run(jdata['bot_TOKEN'])
