@@ -39,20 +39,20 @@ async def on_ready():
 violations_nb = 3       #違規次數
 channel_id = 867417685994242099     #公告頻道id
 prisoner_id = 867416055366287361        #"囚犯"身分組id
-
+sleep = 10      #入獄時間(s)
 
 
 @bot.command()          #機器人Ping
 async def ping(ctx):
     await ctx.send(f"{round(bot.latency*1000)} ms")
 
-@bot.command()      #[修改公告頻道 867417685994242099
+@bot.command()      #[修改公告頻道 
 async def 公告頻道(ctx,msg):
     global channel_id
     channel_id = int(msg)
     await ctx.send("修改完成")
 
-@bot.command()      #[修改囚犯身分組 867416055366287361
+@bot.command()      #[修改囚犯身分組 
 async def 囚犯身分組(ctx,msg):
     global prisoner_id
     prisoner_id = int(msg)
@@ -64,7 +64,13 @@ async def 違規次數(ctx,msg):
     violations_nb = int(msg)
     await ctx.send(f"修改完成,違規次數為{violations_nb}次")
 
-@bot.command()      #列出支語清單 print('{:^10}'.format('test'))
+@bot.command()      #修改囚犯身分組的刑期
+async def 入獄時間(ctx,msg):
+    global sleep
+    sleep = int(msg)
+    await ctx.send(f"修改完成,刑期為{sleep}秒")
+
+@bot.command()      #列出支語清單 你他媽第二次執行會BUG
 async def 支語清單(ctx):
     x=0
     y=0
@@ -73,23 +79,22 @@ async def 支語清單(ctx):
     for item in jdata['cn_term']:
         space = 5-len(jdata['cn_term'][y])
         list.insert(x,jdata['cn_term'][y])
-        result =result+list[x]+space * '　'+list[x+1]+'\n'
+        result = result + list[x] + space * '　'+list[x+1]+'\n'
         x+=2
         y+=1
-    await ctx.send(f"支語　　　正確用法\n{result}")
+    await ctx.send(f"支語　　　正確用法\n{result}")    
 
 @bot.command()      #新增支語到清單中
 async def 新增支語(ctx,msg1,msg2):
     jdata['cn_term'].append(msg1)
     jdata['tw_term'].append(msg2)
-    await ctx.send(f"{jdata['cn_term']}\n{jdata['tw_term']}")
+    await ctx.send(f"已新增{msg1}、{msg2}到清單中")
 
-@bot.command()      #移除清單中的支語
+@bot.command()      #移除清單中的支語   bug 刪除時會警告
 async def 移除支語(ctx,msg1,msg2):
     jdata['cn_term'].remove(msg1)
     jdata['tw_term'].remove(msg2)
-    await ctx.send(jdata['cn_term'])
-    await ctx.send(jdata['tw_term'])
+    await ctx.send(f"已從清單中移除{msg1}、{msg2}")
 
 @bot.command()          #列出警告次數
 async def 我的違規次數(ctx):    
@@ -99,7 +104,7 @@ async def 我的違規次數(ctx):
 
 @bot.command()          #隨機生成一張支語警察圖片
 async def 呼叫支語警察(ctx):    
-    await ctx.send(jdata['pic']+pic_rd(5)+'.jpg')
+    await ctx.send(random.choice(jdata['pic']))
 
 @bot.command()          #召喚支語大隊長
 async def 呼叫支語大隊長(ctx):    
@@ -113,15 +118,16 @@ async def on_message(msg):
         msg_author=msg.author.name
         violation = False
         term_index = -1
-
-        for term in jdata['cn_term']:       #檢查訊息中是否有支語,有則列印出支語與其對應文字,並判定違規
+        result = ''
+        for term in jdata['cn_term']:       #檢查訊息中是否有支語,有則將支語與其對應文字加入result中,violation=True
             term_index += 1            
             if term in msg.content:
-                await msg.channel.send(term +'❌→ ' + jdata['tw_term'][term_index]+'⭕')
+                result = result+term +'❌→ ' + jdata['tw_term'][term_index]+'⭕' + '\n'
                 violation=True
 
-        if violation == True:       #如果違規,會在機器人提醒後,張貼隨機支語警察圖片,並將使用者列入違規名單中
-            await msg.channel.send(jdata['pic']+pic_rd(5)+'.jpg')
+        if violation == True:       #如果violation=True,將result加上隨機支語警察圖片，並列印,將使用者列入違規名單中
+            result = result + random.choice(jdata['pic']) + '\n'
+            await msg.channel.send(result)
             jdata['violation_list'].append(msg_author)      
 
         for item in (jdata['violation_list']) :      #如果在違規名單中出現三次,清除清單紀錄,並增加"囚犯"身分
@@ -133,12 +139,12 @@ async def on_message(msg):
                 prisoner = guild.get_role(prisoner_id)
                 member = msg.author
                 await member.add_roles(prisoner)
-                await channel.send(item + "因違規被關入監獄5秒")                
+                await channel.send(f"{item} + 因違規被關入監獄{sleep}秒")                
 
-                async def interval():       #5秒後清除"囚犯"身分  604800  #bug 刪除身分組 還是會執行                           
+                async def interval():       #10秒後清除"囚犯"身分  604800  #bug 刪除身分組 還是會執行                           
                     A_Car = True
                     if A_Car == True:
-                        await asyncio.sleep(10)
+                        await asyncio.sleep(sleep)
                         await member.remove_roles(prisoner)
                         await channel.send(item +"已從監獄中解放")
                         A_Car = False
