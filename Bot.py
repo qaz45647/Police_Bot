@@ -65,15 +65,13 @@ async def 入獄時間(ctx,msg):
 @bot.command()      #列出支語清單 你他媽第二次執行會BUG
 async def 支語清單(ctx):
     x=0
-    y=0
     result=''
     list = jdata['tw_term']
     for item in jdata['cn_term']:
-        space = 5-len(jdata['cn_term'][y])
-        list.insert(x,jdata['cn_term'][y])
+        space = 5-len(item)
+        list.insert(x,item)
         result = result + list[x] + space * '　'+list[x+1]+'\n'
         x+=2
-        y+=1
     await ctx.send(f"支語　　　正確用法\n{result}")    
 
 @bot.command()      #新增支語到清單中
@@ -113,7 +111,7 @@ async def on_message(msg):
         for term in jdata['cn_term']:       #檢查訊息中是否有支語,有則將支語與其對應文字加入result中,violation=True
             term_index += 1            
             if term in msg.content:
-                result = result+term +'❌→ ' + jdata['tw_term'][term_index]+'⭕' + '\n'
+                result = result + term +'❌→ ' + jdata['tw_term'][term_index]+'⭕' + '\n'
                 violation=True
 
         if violation == True:       #如果violation=True,將result加上隨機支語警察圖片，並列印,將使用者列入違規名單中
