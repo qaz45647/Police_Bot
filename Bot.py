@@ -22,7 +22,7 @@ bot = commands.Bot(command_prefix='[')
 violations_nb = 3       #違規次數
 channel_id = 867417685994242099     #公告頻道id
 prisoner_id = 867416055366287361        #"囚犯"身分組id
-sleep = 10      #入獄時間(s)
+sleep = 300      #入獄時間(s)
 
 
 
