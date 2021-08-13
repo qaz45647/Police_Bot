@@ -62,17 +62,19 @@ async def 入獄時間(ctx,msg):
     sleep = int(msg)
     await ctx.send(f"修改完成,刑期為{sleep}秒")
 
-@bot.command()      #列出支語清單 你他媽第二次執行會BUG
+@bot.command()      #列出支語清單 
 async def 支語清單(ctx):
     x=0
     result=''
-    list = jdata['tw_term']
+    list = []
+    list += jdata['tw_term']
     for item in jdata['cn_term']:
         space = 5-len(item)
         list.insert(x,item)
-        result = result + list[x] + space * '　'+list[x+1]+'\n'
-        x+=2
+        result = result + list[x] + space * '　' + list[x+1] + '\n'
+        x += 2
     await ctx.send(f"支語　　　正確用法\n{result}")    
+
 
 @bot.command()      #新增支語到清單中
 async def 新增支語(ctx,msg1,msg2):
@@ -80,7 +82,7 @@ async def 新增支語(ctx,msg1,msg2):
     jdata['tw_term'].append(msg2)
     await ctx.send(f"已新增{msg1}、{msg2}到清單中")
 
-@bot.command()      #移除清單中的支語   bug 刪除時會警告
+@bot.command()      #移除清單中的支語
 async def 移除支語(ctx,msg1,msg2):
     jdata['cn_term'].remove(msg1)
     jdata['tw_term'].remove(msg2)
