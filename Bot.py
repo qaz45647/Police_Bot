@@ -30,10 +30,6 @@ sleep = 10      #入獄時間(s)
 async def on_ready():
     print(">> Bot is online <<")
 
-@bot.command()          
-async def test(ctx):
-    await ctx.send(ctx.author.roles)
-
 @bot.command()          #機器人Ping
 async def ping(ctx):
     await ctx.send(f"{round(bot.latency*1000)} ms")
@@ -78,15 +74,25 @@ async def 支語清單(ctx):
 
 @bot.command()      #新增支語到清單中
 async def 新增支語(ctx,msg1,msg2):
-    jdata['cn_term'].append(msg1)
-    jdata['tw_term'].append(msg2)
-    await ctx.send(f"已新增{msg1}、{msg2}到清單中")
+    if msg1 in jdata['cn_term']:
+        await ctx.send('關鍵字已在清單中,新增無效!')
+    elif msg2 in jdata['tw_term']:
+        await ctx.send('關鍵字已在清單中,新增無效!')
+    else:
+        jdata['cn_term'].append(msg1)
+        jdata['tw_term'].append(msg2)
+        await ctx.send(f"已新增{msg1}、{msg2}到清單中")
 
 @bot.command()      #移除清單中的支語
 async def 移除支語(ctx,msg1,msg2):
-    jdata['cn_term'].remove(msg1)
-    jdata['tw_term'].remove(msg2)
-    await ctx.send(f"已從清單中移除{msg1}、{msg2}")
+    if msg1 not in jdata['cn_term']:
+        await ctx.send('您要刪除的關鍵字並不在清單中...')
+    elif msg2 not in jdata['tw_term']:
+        await ctx.send('您要刪除的關鍵字並不在清單中...')
+    else:    
+        jdata['cn_term'].remove(msg1)
+        jdata['tw_term'].remove(msg2)
+        await ctx.send(f"已從清單中移除{msg1}、{msg2}")
 
 @bot.command()          #列出警告次數
 async def 我的違規次數(ctx):    
