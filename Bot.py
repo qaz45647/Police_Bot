@@ -136,7 +136,7 @@ async def on_message(msg):
                 prisoner = guild.get_role(prisoner_id)
                 member = msg.author
                 await member.add_roles(prisoner)
-                await channel.send(f"{item} + 因違規被關入監獄{sleep}秒")  
+                await channel.send(f"{item}  因違規被關入監獄{sleep}秒")  
 
                 async def interval():       #10秒後清除"囚犯"身分   #bug 刪除身分組 還是會執行                           
                     A_Car = True
