@@ -11,6 +11,49 @@ import json,asyncio
 import random
 
 
+
+#-.`                            `-+yhhhhhhhhhyo+-`                    `..`.-
+#`                          ` -+ydddddhddddshddh/`                         `
+#.                        `:shddddddhs:ohdy/++/sddo` `                     `
+#-                     -/yddddddddddyo//sdy+os//yddh/ `                    `
+#:                `./shddddddddddddddo/+sdh++s+/sddddy-                    `
+#:             .:shhdddddddddddddddhs++yhddhyyoshdddddd+`                  `
+#:         `./shddddddddddddddddddds+/:/yddo++o++hddddddh-                 `
+#:       ./yddddddddddddddddddddddddy+/sdddy//+oydddddddddo.               `
+#:     -oddddddddddddddddddddddddddddyooddsss+yssydddddddddh-              `
+#:   :ymdddddddddddddddddddddddddmmmmmddNNmmmhddmmmddddddddddo`            `
+#-  omdddddddddddddddddddmmmNNNMMMMMMshyNy/:+//doNMMNmddddddddh-           `
+#: /NddddddddddddmmmNNNMMMMMMMMMMMMMNsdss-+:oo/shMMMMMMNdddddddd:          `
+#- /mdddddmmmNNMMMMMMMMMMMMMMMMMMMMMMMMMdo:h/h/sshNMMMMMMmddddddd.         `
+#:  -symdmMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhsyo/ooddhdhyhMMMMMMmddddy.         `
+#:     ..oNMMMMMMMMMMMMMMMMMMMMMMMMMMMNos+syMMMMNyyoNMMMMMMMNyo.`          `
+#:        hMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNNNNNmmdddmdddmNNNd`             `
+#:      `:yNNNNmmdmdhhdyyyyyhyydyydyshyssyooshooosooossoodohy.             `
+#:      `hshyyyyyyy+////+oossyyhhhdddddddddddddddddddddddddddhy:`          `
+#:       -:/hyyyyyy+`````:.`....--://+oyo+++++yddhddddddddhhddddh+.        `
+#:       `.sosyyyyhh-```.+`.:++oosssyyyyh-````ohyyyssssyhds:-:+yyhy+       `
+#:        -+.:+oshys.````.`-/////++++ooo:``````:o+oooossyh:     ````       `
+#:        -+::-/ohh:```````-/syyyssssyys/````--/+.+osyhhs//                `
+#:        -o:+-/:sd.`.```````````````````````-y-``````````.                `
+#:        `y.o`o/:y``+..``````````````````````-y/`````````+.               `
+#:         /s:..:+/``.:-.``````````````````````.os.```````s-               `
+#:          .:+o/`.``````````````````````:-``````y/``````.h                `
+#:         `   //`-.`````````````````````s.-//-`:h.``````o/                `
+#:            `s:`./`````````````````````..````-s-``````.y                 `
+#:           `/d.``+.```````````````````````````````````s-                 `
+#:          /ydd.``::```````````````````````````./:````/+                  `
+#:        -sddmy```.//-```````````````:++++++++/-/-```-o                    
+#:       :hdmmm/````-/:/:.````````````-:::+oso/::````-s`                    
+#: `.-:/ohdddmd-`````:-.:/:.```````````-:-...-:/-```.h+                     
+#osyhddddddddddh+.````/.``-//-`````````````````````.hddo-`                  
+#ydddddddddddddddy/.``./.```-//-.`````````````````.ydddddd:                `
+#ydddddddddddddddddy:.`./`````.:::.```````````````:dddddddd.                
+#ydddddddddddddddddddy/.:/```````.--:://://///+oosyddddmddmdo:.             
+#yddddddddddmdddddddddddhd+.`````````````.s.``odddddddmddddmmddy+- `        
+#shhhhhhhhhhhhhhhhhhhhhhhhhy.```````````-s+```yhhhhhhhdhhhhhhhhhhhyo:``   ``
+
+
+
 with open('setting.json','r',encoding='utf8') as jfile:
     jdata = json.load(jfile)
 
@@ -18,12 +61,14 @@ intents = discord.Intents.all()
 
 bot = commands.Bot(command_prefix='[')
 
-
-violations_nb = 3       #違規次數
+####################################################
+#使用前需先修改channel_id、prisoner_id與json中的"bot_TOKEN"
 channel_id = 867417685994242099     #公告頻道id
 prisoner_id = 867416055366287361        #"囚犯"身分組id
-sleep = 10       #入獄時間(s)
+####################################################
 
+sleep = 10       #入獄時間(s)
+violations_nb = 3       #違規次數
 
 
 @bot.event
@@ -141,9 +186,7 @@ async def on_message(msg):
                 await asyncio.sleep(sleep)      #"sleep"秒後清除"囚犯"身分   #bug 在刑期結束前移除"囚犯"身分組 程式還是會照常執行 
                 await member.remove_roles(prisoner)       
                 await channel.send(item +"已從監獄中解放")
-
-                
-
+             
     await bot.process_commands(msg)
 
 bot.run(jdata['bot_TOKEN'])
