@@ -68,7 +68,7 @@
 
 顯示使用者的違規次數與剩餘違規次數
 
-![](https://media.discordapp.net/attachments/870613188046110771/875743134666067978/IMG09.png)
+![https://media.discordapp.net/attachments/870613188046110771/875743134666067978/IMG09.png](https://media.discordapp.net/attachments/870613188046110771/875743134666067978/IMG09.png)
 
 ### [呼叫支語警察
 
