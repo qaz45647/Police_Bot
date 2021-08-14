@@ -22,7 +22,7 @@ bot = commands.Bot(command_prefix='[')
 violations_nb = 3       #違規次數
 channel_id = 867417685994242099     #公告頻道id
 prisoner_id = 867416055366287361        #"囚犯"身分組id
-sleep = 300      #入獄時間(s)
+sleep = 10       #入獄時間(s)
 
 
 
@@ -137,15 +137,12 @@ async def on_message(msg):
                 member = msg.author
                 await member.add_roles(prisoner)
                 await channel.send(f"{item}  因違規被關入監獄{sleep}秒")  
+                                   
+                await asyncio.sleep(sleep)      #10秒後清除"囚犯"身分   #bug 刪除身分組 還是會執行 
+                await member.remove_roles(prisoner)       
+                await channel.send(item +"已從監獄中解放")
 
-                async def interval():       #10秒後清除"囚犯"身分   #bug 刪除身分組 還是會執行                           
-                    A_Car = True
-                    if A_Car == True:
-                        await asyncio.sleep(sleep)
-                        await member.remove_roles(prisoner)       
-                        await channel.send(item +"已從監獄中解放")
-                        A_Car = False
-                bg_task = bot.loop.create_task(interval())
+                
 
     await bot.process_commands(msg)
 
