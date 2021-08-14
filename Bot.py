@@ -138,7 +138,7 @@ async def on_message(msg):
                 await member.add_roles(prisoner)
                 await channel.send(f"{item}  因違規被關入監獄{sleep}秒")  
                                    
-                await asyncio.sleep(sleep)      #10秒後清除"囚犯"身分   #bug 刪除身分組 還是會執行 
+                await asyncio.sleep(sleep)      #"sleep"秒後清除"囚犯"身分   #bug 在刑期結束前移除"囚犯"身分組 程式還是會照常執行 
                 await member.remove_roles(prisoner)       
                 await channel.send(item +"已從監獄中解放")
 
