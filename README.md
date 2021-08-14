@@ -96,6 +96,16 @@
 
 ##### ■自定義關閉功能，如：發送訊息、新增反應等
 
+
+
+### 注意 請注意警察身分組的排序，排序低下的身分組無法更改排序高的身分組的權限
+
+![https://media.discordapp.net/attachments/870613188046110771/876095711219949618/IMG017.png](https://media.discordapp.net/attachments/870613188046110771/876095711219949618/IMG017.png)
+
+![https://media.discordapp.net/attachments/870613188046110771/876098974803701760/IMG018.png](https://media.discordapp.net/attachments/870613188046110771/876098974803701760/IMG018.png)
+
+
+
 ### 前置作業 – 程式
 
 將機器人的TOKEN放到json檔的bot_TOKEN中
@@ -104,6 +114,6 @@
 
 修改頻道與囚犯身分組ID
 
-channel_id = 867417685994242099 #公告頻道id
+`channel_id = 867417685994242099`
 
-prisoner_id = 867416055366287361 #"囚犯"身分組id
+`prisoner_id = 867416055366287361`
