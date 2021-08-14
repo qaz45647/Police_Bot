@@ -11,47 +11,47 @@ import json,asyncio
 import random
 
 
-
-#-.`                            `-+yhhhhhhhhhyo+-`                    `..`.-
-#`                          ` -+ydddddhddddshddh/`                         `
-#.                        `:shddddddhs:ohdy/++/sddo` `                     `
-#-                     -/yddddddddddyo//sdy+os//yddh/ `                    `
-#:                `./shddddddddddddddo/+sdh++s+/sddddy-                    `
-#:             .:shhdddddddddddddddhs++yhddhyyoshdddddd+`                  `
-#:         `./shddddddddddddddddddds+/:/yddo++o++hddddddh-                 `
-#:       ./yddddddddddddddddddddddddy+/sdddy//+oydddddddddo.               `
-#:     -oddddddddddddddddddddddddddddyooddsss+yssydddddddddh-              `
-#:   :ymdddddddddddddddddddddddddmmmmmddNNmmmhddmmmddddddddddo`            `
-#-  omdddddddddddddddddddmmmNNNMMMMMMshyNy/:+//doNMMNmddddddddh-           `
-#: /NddddddddddddmmmNNNMMMMMMMMMMMMMNsdss-+:oo/shMMMMMMNdddddddd:          `
-#- /mdddddmmmNNMMMMMMMMMMMMMMMMMMMMMMMMMdo:h/h/sshNMMMMMMmddddddd.         `
-#:  -symdmMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhsyo/ooddhdhyhMMMMMMmddddy.         `
-#:     ..oNMMMMMMMMMMMMMMMMMMMMMMMMMMMNos+syMMMMNyyoNMMMMMMMNyo.`          `
-#:        hMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNNNNNmmdddmdddmNNNd`             `
-#:      `:yNNNNmmdmdhhdyyyyyhyydyydyshyssyooshooosooossoodohy.             `
-#:      `hshyyyyyyy+////+oossyyhhhdddddddddddddddddddddddddddhy:`          `
-#:       -:/hyyyyyy+`````:.`....--://+oyo+++++yddhddddddddhhddddh+.        `
-#:       `.sosyyyyhh-```.+`.:++oosssyyyyh-````ohyyyssssyhds:-:+yyhy+       `
-#:        -+.:+oshys.````.`-/////++++ooo:``````:o+oooossyh:     ````       `
-#:        -+::-/ohh:```````-/syyyssssyys/````--/+.+osyhhs//                `
-#:        -o:+-/:sd.`.```````````````````````-y-``````````.                `
-#:        `y.o`o/:y``+..``````````````````````-y/`````````+.               `
-#:         /s:..:+/``.:-.``````````````````````.os.```````s-               `
-#:          .:+o/`.``````````````````````:-``````y/``````.h                `
-#:         `   //`-.`````````````````````s.-//-`:h.``````o/                `
-#:            `s:`./`````````````````````..````-s-``````.y                 `
-#:           `/d.``+.```````````````````````````````````s-                 `
-#:          /ydd.``::```````````````````````````./:````/+                  `
-#:        -sddmy```.//-```````````````:++++++++/-/-```-o                    
-#:       :hdmmm/````-/:/:.````````````-:::+oso/::````-s`                    
-#: `.-:/ohdddmd-`````:-.:/:.```````````-:-...-:/-```.h+                     
-#osyhddddddddddh+.````/.``-//-`````````````````````.hddo-`                  
-#ydddddddddddddddy/.``./.```-//-.`````````````````.ydddddd:                `
-#ydddddddddddddddddy:.`./`````.:::.```````````````:dddddddd.                
-#ydddddddddddddddddddy/.:/```````.--:://://///+oosyddddmddmdo:.             
-#yddddddddddmdddddddddddhd+.`````````````.s.``odddddddmddddmmddy+- `        
-#shhhhhhhhhhhhhhhhhhhhhhhhhy.```````````-s+```yhhhhhhhdhhhhhhhhhhhyo:``   ``
-
+"""
+-.`                            `-+yhhhhhhhhhyo+-`                    `..`.-
+`                          ` -+ydddddhddddshddh/`                         `
+.                        `:shddddddhs:ohdy/++/sddo` `                     `
+-                     -/yddddddddddyo//sdy+os//yddh/ `                    `
+:                `./shddddddddddddddo/+sdh++s+/sddddy-                    `
+:             .:shhdddddddddddddddhs++yhddhyyoshdddddd+`                  `
+:         `./shddddddddddddddddddds+/:/yddo++o++hddddddh-                 `
+:       ./yddddddddddddddddddddddddy+/sdddy//+oydddddddddo.               `
+:     -oddddddddddddddddddddddddddddyooddsss+yssydddddddddh-              `
+:   :ymdddddddddddddddddddddddddmmmmmddNNmmmhddmmmddddddddddo`            `
+-  omdddddddddddddddddddmmmNNNMMMMMMshyNy/:+//doNMMNmddddddddh-           `
+: /NddddddddddddmmmNNNMMMMMMMMMMMMMNsdss-+:oo/shMMMMMMNdddddddd:          `
+- /mdddddmmmNNMMMMMMMMMMMMMMMMMMMMMMMMMdo:h/h/sshNMMMMMMmddddddd.         `
+:  -symdmMMMMMMMMMMMMMMMMMMMMMMMMMMMMNhsyo/ooddhdhyhMMMMMMmddddy.         `
+:     ..oNMMMMMMMMMMMMMMMMMMMMMMMMMMMNos+syMMMMNyyoNMMMMMMMNyo.`          `
+:        hMMMMMMMMMMMMMMMMMMMMMMMMMMMMNNNNNNNNmmdddmdddmNNNd`             `
+:      `:yNNNNmmdmdhhdyyyyyhyydyydyshyssyooshooosooossoodohy.             `
+:      `hshyyyyyyy+////+oossyyhhhdddddddddddddddddddddddddddhy:`          `
+:       -:/hyyyyyy+`````:.`....--://+oyo+++++yddhddddddddhhddddh+.        `
+:       `.sosyyyyhh-```.+`.:++oosssyyyyh-````ohyyyssssyhds:-:+yyhy+       `
+:        -+.:+oshys.````.`-/////++++ooo:``````:o+oooossyh:     ````       `
+:        -+::-/ohh:```````-/syyyssssyys/````--/+.+osyhhs//                `
+:        -o:+-/:sd.`.```````````````````````-y-``````````.                `
+:        `y.o`o/:y``+..``````````````````````-y/`````````+.               `
+:         /s:..:+/``.:-.``````````````````````.os.```````s-               `
+:          .:+o/`.``````````````````````:-``````y/``````.h                `
+:         `   //`-.`````````````````````s.-//-`:h.``````o/                `
+:            `s:`./`````````````````````..````-s-``````.y                 `
+:           `/d.``+.```````````````````````````````````s-                 `
+:          /ydd.``::```````````````````````````./:````/+                  `
+:        -sddmy```.//-```````````````:++++++++/-/-```-o                    
+:       :hdmmm/````-/:/:.````````````-:::+oso/::````-s`                    
+: `.-:/ohdddmd-`````:-.:/:.```````````-:-...-:/-```.h+                     
+osyhddddddddddh+.````/.``-//-`````````````````````.hddo-`                  
+ydddddddddddddddy/.``./.```-//-.`````````````````.ydddddd:                `
+ydddddddddddddddddy:.`./`````.:::.```````````````:dddddddd.                
+ydddddddddddddddddddy/.:/```````.--:://://///+oosyddddmddmdo:.             
+yddddddddddmdddddddddddhd+.`````````````.s.``odddddddmddddmmddy+- `        
+shhhhhhhhhhhhhhhhhhhhhhhhhy.```````````-s+```yhhhhhhhdhhhhhhhhhhhyo:``   ``
+"""
 
 
 with open('setting.json','r',encoding='utf8') as jfile:
