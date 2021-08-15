@@ -36,13 +36,13 @@
 
 ![https://media.discordapp.net/attachments/870613188046110771/875743126491394058/IMG04.png](https://media.discordapp.net/attachments/870613188046110771/875743126491394058/IMG04.png)
 
-### [入獄時間 數字
+### [刑期 數字
 
 修改違規用戶維持"囚犯"身分組的時間
 
 單位：秒s
 
-![https://media.discordapp.net/attachments/870613188046110771/875743128664018994/IMG05.png](https://media.discordapp.net/attachments/870613188046110771/875743128664018994/IMG05.png)
+![https://media.discordapp.net/attachments/870613188046110771/875743128664018994/IMG05.png](https://media.discordapp.net/attachments/870613188046110771/876417346397413426/-1.png)
 
 ### [支語清單
 
