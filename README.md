@@ -2,17 +2,17 @@
 
 ## 主功能：
 
-機器人會偵測每次傳送的訊息中是否出現支語，如果出現會給予提醒，並給予違規標記
+機器人會偵測每次傳送的訊息中是否出現支語，如果出現會給予提醒，並加入違規清單中
 
 ![https://media.discordapp.net/attachments/870613188046110771/875743134598979664/IMG08.png](https://media.discordapp.net/attachments/870613188046110771/875743134598979664/IMG08.png)
 
-如果被機器人標記指定次數(3)，機器人會給予你"囚犯"身分組，並至公告頻道宣布入獄時間
+如果違規清單出現重複用戶3次，機器人會給你"囚犯"身分組，並到公告頻道通知
 
 ![https://cdn.discordapp.com/attachments/870613188046110771/875760913901297674/IMG012.png](https://cdn.discordapp.com/attachments/870613188046110771/875760913901297674/IMG012.png)
 
 ![https://media.discordapp.net/attachments/870613188046110771/875759794718404698/IMG014.png](https://media.discordapp.net/attachments/870613188046110771/875759794718404698/IMG014.png)
 
-懲罰時間結束後，機器人會移除你的"囚犯"身份組，並至公告頻道通知
+懲罰時間結束後，機器人會移除你的"囚犯"身份組，並到公告頻道通知
 
 ![https://media.discordapp.net/attachments/870613188046110771/875760566138966067/IMG015.png](https://media.discordapp.net/attachments/870613188046110771/875760566138966067/IMG015.png)
 
@@ -20,25 +20,25 @@
 
 ### [公告頻道 頻道id
 
-設定公告頻道的id，機器人會在這裡發佈入獄與出獄通知
+設定公告頻道的id，機器人會在這裡發佈通知
 
 ![https://media.discordapp.net/attachments/870613188046110771/875743119310721024/IMG02.png](https://media.discordapp.net/attachments/870613188046110771/875743119310721024/IMG02.png)
 
 ### [囚犯身分組 囚犯身分組id
 
-設定囚犯身分組的id，玩家被標記指定次數(3)後，會被賦予此身分組
+設定囚犯身分組的id，違規用戶會被賦予此身分組
 
 ![https://media.discordapp.net/attachments/870613188046110771/875743123752484904/IMG03.png](https://media.discordapp.net/attachments/870613188046110771/875743123752484904/IMG03.png)
 
 ### [違規次數 數字
 
-修改機器人判定入獄的標記次數
+修改機器人判定入獄的違規次數
 
 ![https://media.discordapp.net/attachments/870613188046110771/875743126491394058/IMG04.png](https://media.discordapp.net/attachments/870613188046110771/875743126491394058/IMG04.png)
 
 ### [入獄時間 數字
 
-修改違規者被給予"囚犯"身分組的時間
+修改違規用戶維持"囚犯"身分組的時間
 
 單位：秒s
 
@@ -46,7 +46,7 @@
 
 ### [支語清單
 
-顯示機器人判斷用的支語關鍵字與正確用法
+顯示支語清單
 
 ![https://media.discordapp.net/attachments/870613188046110771/875743109462495232/IMG01.png?width=836&height=620](https://media.discordapp.net/attachments/870613188046110771/875743109462495232/IMG01.png?width=836&height=620)
 
@@ -58,19 +58,19 @@
 
 ### [移除支語 支語 正確用法
 
-從判斷用的清單中，移除指定支語
+移除指定支語
 
 ![https://media.discordapp.net/attachments/870613188046110771/875743131348377680/IMG07.png](https://media.discordapp.net/attachments/870613188046110771/875743131348377680/IMG07.png)
 
 ### [我的違規次數
 
-顯示使用者的違規次數與剩餘違規次數
+顯示使用者的違規次數與剩餘扣打
 
 ![https://media.discordapp.net/attachments/870613188046110771/875743134666067978/IMG09.png](https://media.discordapp.net/attachments/870613188046110771/875743134666067978/IMG09.png)
 
 ### [呼叫支語警察
 
-隨機生成一張支語警察
+隨機生成一張支語警察(共61張)
 
 ![https://media.discordapp.net/attachments/870613188046110771/875743137279139950/IMG010.png](https://media.discordapp.net/attachments/870613188046110771/875743137279139950/IMG010.png)
 
@@ -84,9 +84,11 @@
 
 ### 前置作業 – discord
 
-建立好自己的機器人，並邀請到群組裡
+建立好自己的機器人後，邀請到群組裡
 
-在群組中建立"警察"身分組，並給予機器人此身分組
+在群組中建立"警察"身分組，並給機器人添加此身分組
+
+除基本權限外，需額外給予：
 
 ##### ■需給予"警察"身分組「管理身分組」的權限
 
@@ -94,9 +96,9 @@
 
 在群組中建立"囚犯"身分組
 
-##### ■自定義功能，如：關閉發送訊息、新增反應等
+##### ■自定義權限，如：關閉發送訊息、新增反應等
 
-### 注意 請注意警察身分組的排序，排序低下的身分組無法更改排序高的身分組的權限
+### 請注意警察身分組的排序，排序低的身分組無法對排序高的身分組進行任何變動
 
 ![https://media.discordapp.net/attachments/870613188046110771/876095711219949618/IMG017.png](https://media.discordapp.net/attachments/870613188046110771/876095711219949618/IMG017.png)
 
@@ -114,13 +116,9 @@
 
 `prisoner_id = 867416055366287361`
 
-
-
 前置作業完成後，打開終端機就能運行了
 
-如要讓機器人保持24小時在線，可參考下方影片網址的教學
-
-[[Proladon] Code a discord bot - 如何讓Discord Bot 24小時在線 (請看置頂留言) - YouTube](https://youtu.be/UT1h9un4Cpo)
+如要讓機器人保持24小時在線，可參考[這支影片]([[Proladon] Code a discord bot - 如何讓Discord Bot 24小時在線 (請看置頂留言) - YouTube](https://youtu.be/UT1h9un4Cpo))的教學
 
 
 
@@ -130,11 +128,11 @@
 
 ###### (不然他就只能永遠當囚犯了)
 
+■一台機器人只能為一個伺服器服務
+
 ■機器人關閉後，使用指令加入、修改的參數會重置，所以建議在程式端修改完機器人再執行
 
-
-
-■被機器人賦予"囚犯"身分組的時候，如果手動移除"囚犯"身分組，以下程式還是會照常執行
+■在機器人移除"囚犯"身分組前，如果手動移除"囚犯"身分組，以下程式還是會照常執行
 
 `await asyncio.sleep(sleep)  #"sleep"秒後`
 
