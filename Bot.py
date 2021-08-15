@@ -79,13 +79,13 @@ async def on_ready():
 async def ping(ctx):
     await ctx.send(f"{round(bot.latency*1000)} ms")
 
-@bot.command()      #[修改公告頻道 
+@bot.command()      #修改公告頻道 
 async def 公告頻道(ctx,msg):
     global channel_id
     channel_id = int(msg)
     await ctx.send("修改完成")
 
-@bot.command()      #[修改囚犯身分組 
+@bot.command()      #修改囚犯身分組 
 async def 囚犯身分組(ctx,msg):
     global prisoner_id
     prisoner_id = int(msg)
