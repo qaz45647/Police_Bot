@@ -4,9 +4,7 @@
 
 ## 主功能：
 
-機器人會偵測每次傳送的訊息中是否出現支語，如果出現會給予提醒，並加入違規清單中
-
-![https://media.discordapp.net/attachments/870613188046110771/875743134598979664/IMG08.png](https://media.discordapp.net/attachments/870613188046110771/875743134598979664/IMG08.png)
+機器人會偵測每次傳送的訊息中是否提到關鍵字，如果提到會發訊息提醒，並加入違規清單![https://media.discordapp.net/attachments/870613188046110771/875743134598979664/IMG08.png](https://media.discordapp.net/attachments/870613188046110771/875743134598979664/IMG08.png)
 
 如果違規清單出現重複用戶3次，機器人會給你"囚犯"身分組，並到公告頻道通知
 
@@ -54,13 +52,11 @@
 
 ### [新增支語 支語 正確用法
 
-新增新的支語給機器人作判斷
-
-![https://media.discordapp.net/attachments/870613188046110771/875743130656313394/IMG06.png](https://media.discordapp.net/attachments/870613188046110771/875743130656313394/IMG06.png)
+ 新增關鍵字給機器人作判斷![https://media.discordapp.net/attachments/870613188046110771/875743130656313394/IMG06.png](https://media.discordapp.net/attachments/870613188046110771/875743130656313394/IMG06.png)
 
 ### [移除支語 支語 正確用法
 
-移除指定支語
+移除指定關鍵字
 
 ![https://media.discordapp.net/attachments/870613188046110771/875743131348377680/IMG07.png](https://media.discordapp.net/attachments/870613188046110771/875743131348377680/IMG07.png)
 
