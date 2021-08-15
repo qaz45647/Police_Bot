@@ -100,7 +100,9 @@
 
 ![https://media.discordapp.net/attachments/870613188046110771/876095711219949618/IMG017.png](https://media.discordapp.net/attachments/870613188046110771/876095711219949618/IMG017.png)
 
-![https://media.discordapp.net/attachments/870613188046110771/876098974803701760/IMG018.png](https://media.discordapp.net/attachments/870613188046110771/876098974803701760/IMG018.png)
+![https://media.discordapp.net/attachments/870613188046110771/876098974803701760/IMG018.png](https://media.discordapp.net/attachments/870613188046110771/876427326689259531/IMG018.png)
+
+如果沒理解錯的話;;
 
 ### 前置作業 – 程式
 
