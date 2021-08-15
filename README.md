@@ -6,7 +6,7 @@
 
 機器人會偵測每次傳送的訊息中是否提到關鍵字，如果提到會發訊息提醒，並加入違規清單![https://media.discordapp.net/attachments/870613188046110771/875743134598979664/IMG08.png](https://media.discordapp.net/attachments/870613188046110771/875743134598979664/IMG08.png)
 
-如果違規清單出現重複用戶3次，機器人會給你"囚犯"身分組，並到公告頻道通知
+如果違規清單出現重複用戶3次，會給該用戶"囚犯"身分組，並到公告頻道通知
 
 ![https://cdn.discordapp.com/attachments/870613188046110771/875760913901297674/IMG012.png](https://cdn.discordapp.com/attachments/870613188046110771/875760913901297674/IMG012.png)
 
