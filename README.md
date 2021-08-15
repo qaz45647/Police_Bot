@@ -1,5 +1,7 @@
 # Discord_Bot - 支語警察機器人
 
+![https://truth.bahamut.com.tw/s01/202108/c61d64f20c8e88f03d4d9e9ec8b793cb.JPG](https://truth.bahamut.com.tw/s01/202108/c61d64f20c8e88f03d4d9e9ec8b793cb.JPG)
+
 ## 主功能：
 
 機器人會偵測每次傳送的訊息中是否出現支語，如果出現會給予提醒，並加入違規清單中
