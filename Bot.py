@@ -98,7 +98,7 @@ async def 違規次數(ctx,msg):
     await ctx.send(f"修改完成,違規次數為{violations_nb}次")
 
 @bot.command()      #修改囚犯身分組的刑期
-async def 入獄時間(ctx,msg):
+async def 刑期(ctx,msg):
     global sleep
     sleep = int(msg)
     await ctx.send(f"修改完成,刑期為{sleep}秒")
