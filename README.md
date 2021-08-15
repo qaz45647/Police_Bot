@@ -120,7 +120,7 @@
 
 前置作業完成後，打開終端機就能運行了
 
-如要讓機器人保持24小時在線，可參考[這支影片]([[Proladon] Code a discord bot - 如何讓Discord Bot 24小時在線 (請看置頂留言) - YouTube](https://youtu.be/UT1h9un4Cpo))的教學
+如要讓機器人保持24小時在線，可參考[這支影片](https://youtu.be/UT1h9un4Cpo)的教學
 
 ## 其他注意事項：
 
