@@ -4,17 +4,17 @@
 
 ## 主功能：
 
-機器人會偵測每次傳送的訊息中是否提到關鍵字，如果提到會發訊息提醒，並加入違規清單![https://media.discordapp.net/attachments/870613188046110771/875743134598979664/IMG08.png](https://media.discordapp.net/attachments/870613188046110771/875743134598979664/IMG08.png)
+機器人會偵測每次傳送的訊息中是否提到關鍵字，如果提到會發訊息提醒，並加入違規清單![https://truth.bahamut.com.tw/s01/202410/c9f515f8daff60157d84a0e7d6782bad.JPG](https://truth.bahamut.com.tw/s01/202410/c9f515f8daff60157d84a0e7d6782bad.JPG)
 
 如果違規清單出現重複用戶3次，會給該用戶"囚犯"身分組，並到公告頻道通知
 
-![https://cdn.discordapp.com/attachments/870613188046110771/875760913901297674/IMG012.png](https://cdn.discordapp.com/attachments/870613188046110771/875760913901297674/IMG012.png)
+![https://truth.bahamut.com.tw/s01/202410/d331dcc764543af3da766bc6a916b693.PNG](https://truth.bahamut.com.tw/s01/202410/d331dcc764543af3da766bc6a916b693.PNG)
 
-![https://media.discordapp.net/attachments/870613188046110771/875759794718404698/IMG014.png](https://media.discordapp.net/attachments/870613188046110771/875759794718404698/IMG014.png)
+![https://truth.bahamut.com.tw/s01/202410/40030af05ab7cb88305b13776122e17b.PNG](https://truth.bahamut.com.tw/s01/202410/40030af05ab7cb88305b13776122e17b.PNG)
 
 懲罰時間結束後，機器人會移除你的"囚犯"身份組，並到公告頻道通知
 
-![https://media.discordapp.net/attachments/870613188046110771/875760566138966067/IMG015.png](https://media.discordapp.net/attachments/870613188046110771/875760566138966067/IMG015.png)
+![https://truth.bahamut.com.tw/s01/202410/f3e7e0018320212b5889bb1385c5718b.PNG](https://truth.bahamut.com.tw/s01/202410/f3e7e0018320212b5889bb1385c5718b.PNG)
 
 ## 指令：
 
@@ -22,19 +22,19 @@
 
 設定公告頻道的id，機器人會在這裡發佈通知
 
-![https://media.discordapp.net/attachments/870613188046110771/875743119310721024/IMG02.png](https://media.discordapp.net/attachments/870613188046110771/875743119310721024/IMG02.png)
+![https://truth.bahamut.com.tw/s01/202410/419ca08dd63129e4de5e738998dbe269.PNG](https://truth.bahamut.com.tw/s01/202410/419ca08dd63129e4de5e738998dbe269.PNG)
 
 ### [囚犯身分組 囚犯身分組id
 
 設定囚犯身分組的id，違規用戶會被賦予此身分組
 
-![https://media.discordapp.net/attachments/870613188046110771/875743123752484904/IMG03.png](https://media.discordapp.net/attachments/870613188046110771/875743123752484904/IMG03.png)
+![https://truth.bahamut.com.tw/s01/202410/451366dbd0ca1022ec68ca49ffaa537f.PNG](https://truth.bahamut.com.tw/s01/202410/451366dbd0ca1022ec68ca49ffaa537f.PNG)
 
 ### [違規次數 數字
 
 修改機器人判定入獄的違規次數
 
-![https://media.discordapp.net/attachments/870613188046110771/875743126491394058/IMG04.png](https://media.discordapp.net/attachments/870613188046110771/875743126491394058/IMG04.png)
+![https://truth.bahamut.com.tw/s01/202410/ed9ede2ef3bb681fab9a8a1224f157b9.PNG](https://truth.bahamut.com.tw/s01/202410/ed9ede2ef3bb681fab9a8a1224f157b9.PNG)
 
 ### [刑期 數字
 
@@ -42,41 +42,41 @@
 
 單位：秒s
 
-![https://media.discordapp.net/attachments/870613188046110771/875743128664018994/IMG05.png](https://media.discordapp.net/attachments/870613188046110771/876417346397413426/-1.png)
+![https://truth.bahamut.com.tw/s01/202410/59132dd707d59c738136239cb14c8780.PNG](https://truth.bahamut.com.tw/s01/202410/59132dd707d59c738136239cb14c8780.PNG)
 
 ### [支語清單
 
 顯示支語清單
 
-![https://media.discordapp.net/attachments/870613188046110771/875743109462495232/IMG01.png?width=836&height=620](https://media.discordapp.net/attachments/870613188046110771/875743109462495232/IMG01.png?width=836&height=620)
+![https://truth.bahamut.com.tw/s01/202410/4ae8bff6c914224245cb9ba2f34bf55e.PNG?width=836&height=620](https://truth.bahamut.com.tw/s01/202410/4ae8bff6c914224245cb9ba2f34bf55e.PNG?width=836&height=620)
 
 ### [新增支語 支語 正確用法
 
- 新增關鍵字給機器人作判斷![https://media.discordapp.net/attachments/870613188046110771/875743130656313394/IMG06.png](https://media.discordapp.net/attachments/870613188046110771/875743130656313394/IMG06.png)
+ 新增關鍵字給機器人作判斷![https://truth.bahamut.com.tw/s01/202410/adda14a305599f511ac430368e3cc684.PNG](https://truth.bahamut.com.tw/s01/202410/adda14a305599f511ac430368e3cc684.PNG)
 
 ### [移除支語 支語 正確用法
 
 移除指定關鍵字
 
-![https://media.discordapp.net/attachments/870613188046110771/875743131348377680/IMG07.png](https://media.discordapp.net/attachments/870613188046110771/875743131348377680/IMG07.png)
+![https://truth.bahamut.com.tw/s01/202410/9c5694c4e7177cab2af0c29284d504df.PNG](https://truth.bahamut.com.tw/s01/202410/9c5694c4e7177cab2af0c29284d504df.PNG)
 
 ### [我的違規次數
 
 顯示使用者的違規次數與剩餘扣打
 
-![https://media.discordapp.net/attachments/870613188046110771/875743134666067978/IMG09.png](https://media.discordapp.net/attachments/870613188046110771/875743134666067978/IMG09.png)
+![https://truth.bahamut.com.tw/s01/202410/945b9e09b3a74d661d653cefafb3be8c.PNG](https://truth.bahamut.com.tw/s01/202410/945b9e09b3a74d661d653cefafb3be8c.PNG)
 
 ### [呼叫支語警察
 
 隨機生成一張支語警察(共61張)
 
-![https://media.discordapp.net/attachments/870613188046110771/875743137279139950/IMG010.png](https://media.discordapp.net/attachments/870613188046110771/875743137279139950/IMG010.png)
+![https://truth.bahamut.com.tw/s01/202410/1a02fa87d8ca2e20613cefb97a90ea96.JPG](https://truth.bahamut.com.tw/s01/202410/1a02fa87d8ca2e20613cefb97a90ea96.JPG)
 
 ### [呼叫支語大隊長
 
 叫出我們酷酷的支語大隊長
 
-![https://media.discordapp.net/attachments/870613188046110771/875743088830709830/IMG01.gif](https://media.discordapp.net/attachments/870613188046110771/875743088830709830/IMG01.gif)
+![https://upload.cc/i1/2024/10/19/wQFdW7.gif](https://upload.cc/i1/2024/10/19/wQFdW7.gif)
 
 ## 使用須知：
 
@@ -98,9 +98,9 @@
 
 ### 請注意警察身分組的排序，排序低的身分組無法對用戶新增排序高的身分組
 
-![https://media.discordapp.net/attachments/870613188046110771/876095711219949618/IMG017.png](https://media.discordapp.net/attachments/870613188046110771/876095711219949618/IMG017.png)
+![https://truth.bahamut.com.tw/s01/202410/94a80866bb07e317150648a156c4dace.PNG](https://truth.bahamut.com.tw/s01/202410/94a80866bb07e317150648a156c4dace.PNG)
 
-![https://media.discordapp.net/attachments/870613188046110771/876098974803701760/IMG018.png](https://media.discordapp.net/attachments/870613188046110771/876427326689259531/IMG018.png)
+![https://truth.bahamut.com.tw/s01/202410/3226a8f771dcf72cd7d4892c5a8768d6.PNG](https://truth.bahamut.com.tw/s01/202410/3226a8f771dcf72cd7d4892c5a8768d6.PNG)
 
 如果沒理解錯的話;;
 
