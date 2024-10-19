@@ -76,7 +76,7 @@
 
 叫出我們酷酷的支語大隊長
 
-![[https://upload.cc/i1/2024/10/19/wQFdW7.gif](https://github.com/qaz45647/Police_Bot/blob/main/IMG01.gif)]([https://upload.cc/i1/2024/10/19/wQFdW7.gif](https://github.com/qaz45647/Police_Bot/blob/main/IMG01.gif))
+![https://github.com/qaz45647/Police_Bot/blob/main/IMG01.gif?raw=true](https://github.com/qaz45647/Police_Bot/blob/main/IMG01.gif?raw=true)
 
 ## 使用須知：
 
